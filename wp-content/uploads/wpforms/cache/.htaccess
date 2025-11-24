@@ -1,0 +1,16 @@
+
+# BEGIN WPForms
+# ההוראות (שורות) בין "BEGIN WPForms" לבין "END WPForms" הן
+# נוצר באופן דינמי, ויש לשנות אותן רק באמצעות פילטרים של וורדפרס.
+# כל שינוי בהוראות בין סממנים אלה ידרס.
+# Disable access for any file in the cache dir.
+# Apache 2.2
+<IfModule !authz_core_module>
+	Deny from all
+</IfModule>
+
+# Apache 2.4+
+<IfModule authz_core_module>
+	Require all denied
+</IfModule>
+# END WPForms
