@@ -1,0 +1,37 @@
+{
+    "name": "the-watchmaker/rightplace-client",
+    "extra": {
+        "strauss": {
+          "namespace_prefix": "RightPlace\\Vendor\\",
+          "target_directory": "inc/lib",
+          "delete_vendor_files": true,
+          "classmap_prefix": "RightPlace_",
+          "whitelist_packages": ["psr/*"]
+        }
+    },
+ "config": {
+    "allow-plugins": {
+        "brianhenryie/strauss": true
+    },
+    "optimize-autoloader": true,
+    "platform": { "php": "7.4" }
+  },
+ "scripts": {
+    "strauss": "strauss",         
+    "post-install-cmd": [
+      "@strauss",     
+      "composer dump-autoload -o"
+    ],
+    "post-update-cmd": [
+      "@strauss",
+      "composer dump-autoload -o"
+    ]
+  },
+    "require": {
+        "paragonie/sodium_compat": "^1.19",
+        "firebase/php-jwt": "^5.5"
+    },
+    "require-dev": {
+        "brianhenryie/strauss": "^0.14"
+    }
+}

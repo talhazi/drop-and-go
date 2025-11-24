@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sources":["../../frontend-src/main.js"],"sourcesContent":["import './style.css'\n\nconsole.log('[RightPlace] Setting JS up!');\n\n\n"],"names":[],"mappings":"AAEA,QAAQ,IAAI,6BAA6B"}

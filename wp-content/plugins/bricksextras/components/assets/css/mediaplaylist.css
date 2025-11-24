@@ -1,0 +1,23 @@
+.x-media-player-playlist_inner:not(:first-child) {
+    display: none;
+}
+
+:where(.brxe-xmediaplaylist) {
+    color: inherit;
+}
+
+.brxe-xmediaplaylist a:focus {
+    outline: none;
+}
+
+.brxe-xmediaplaylist:focus-within,
+.brxe-xmediaplaylist:focus-visible {
+    outline: thin dotted currentcolor;
+}
+
+:where(.brxe-xmediaplaylist) {
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    position: relative;
+}

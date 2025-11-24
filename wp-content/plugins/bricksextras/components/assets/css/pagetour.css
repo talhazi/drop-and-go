@@ -1,0 +1,515 @@
+
+.shepherd-footer {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0.75rem 0.75rem;
+}
+.shepherd-footer .shepherd-button:last-child {
+  margin-right: 0;
+}
+.shepherd-cancel-icon {
+  background: transparent;
+  border: none;
+  color: hsla(0, 0%, 50%, 0.75);
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: 400;
+  position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    padding: 10px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  transition: color 0.5s ease;
+  line-height: 0;
+}
+.shepherd-cancel-icon:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+.shepherd-has-title .shepherd-content .shepherd-cancel-icon {
+  color: hsla(0, 0%, 50%, 0.75);
+}
+.shepherd-has-title .shepherd-content .shepherd-cancel-icon:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.shepherd-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.shephard-title {
+  font-size: 1em;
+  line-height: 1;
+}
+
+.shepherd-content {
+  outline: none;
+  padding: 0;
+}
+.shepherd-element {
+  background: transparent;
+  max-width: 400px;
+  opacity: 0;
+  outline: none;
+  transition: opacity 0.3s, visibility 0.3s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 9999;
+
+}
+.shepherd-enabled.shepherd-element {
+  opacity: 1;
+  visibility: visible;
+}
+.shepherd-element[data-popper-reference-hidden]:not(.shepherd-centered) {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.shepherd-element,
+.shepherd-element *,
+.shepherd-element :after,
+.shepherd-element :before {
+  box-sizing: border-box;
+}
+.shepherd-arrow,
+.shepherd-arrow:before {
+  height: 16px;
+  position: absolute;
+  width: 16px;
+  z-index: -1;
+}
+.shepherd-arrow:before {
+  background: var(--x-tour-background);
+  content: "";
+  transform: rotate(45deg);
+}
+.shepherd-element[data-popper-placement^="top"] > .shepherd-arrow {
+  bottom: -8px;
+}
+.shepherd-element[data-popper-placement^="bottom"] > .shepherd-arrow {
+  top: -8px;
+}
+.shepherd-element[data-popper-placement^="left"] > .shepherd-arrow {
+  right: -8px;
+}
+.shepherd-element[data-popper-placement^="right"] > .shepherd-arrow {
+  left: -8px;
+}
+.shepherd-element.shepherd-centered > .shepherd-arrow {
+  opacity: 0;
+}
+.shepherd-element.shepherd-has-title[data-popper-placement^="bottom"] > .shepherd-arrow:before {
+  background-color: #e6e6e6;
+}
+.shepherd-target-click-disabled.shepherd-enabled.shepherd-target,
+.shepherd-target-click-disabled.shepherd-enabled.shepherd-target * {
+  pointer-events: none;
+}
+.shepherd-modal-overlay-container {
+  fill:rgba(0, 0, 0, 0.35);
+  height: 0;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s ease-out, height 0ms 0.3s, opacity 0.3s 0ms;
+  width: 100vw;
+  z-index: 9997;
+}
+
+.shepherd-modal-overlay-container.shepherd-modal-is-visible {
+  height: 100vh;
+  opacity: 0.5;
+  transform: translateZ(0);
+  transition: all 0.3s ease-out, height 0s 0s, opacity 0.3s 0s;
+}
+.shepherd-modal-overlay-container.shepherd-modal-is-visible path {
+  pointer-events: all;
+}
+
+
+/* Page Tour Styles */
+
+:root {
+  --x-tour-background: #fff;
+  --x-tour-color: #000;
+}
+
+.extras-theme.shepherd-element.shepherd-has-title[data-popper-placement^=bottom]>.shepherd-arrow:before {
+  background-color: var(--x-tour-background);
+}
+
+.extras-theme.shepherd-element .shepherd-content {
+  background: var(--x-tour-background);
+}
+
+.extras-theme.shepherd-element {
+  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+}
+
+.x-page-tour-container {
+  height: 100% !important;
+  width: 100% !important;
+  position: static !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Start Button */
+.x-page-tour-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.x-page-tour-button__back {
+  border: none;
+}
+
+.x-page-tour-button-icon {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tour Step Styling */
+.brxe-xpagetourstep {
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+.brxe-xpagetour .shepherd-content {
+  background-color: var(--x-tour-background);
+  border-radius: 0px;
+  padding: 20px;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.brxe-xpagetour.shepherd-header {
+  background: transparent;
+  padding: 0;
+}
+
+.brxe-xpagetour .shepherd-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+  padding: 0;
+}
+
+
+.x-page-tour-button-back {
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+.x-page-tour-button-back:hover {
+  background-color: #e0e0e0;
+}
+
+.x-page-tour-button-next,
+.x-page-tour-button-complete {
+  background-color: #1e88e5;
+  color: #ffffff;
+}
+
+.x-page-tour-button-next:hover,
+.x-page-tour-button-complete:hover {
+  background-color: #1565c0;
+}
+
+/* Progress Indicator */
+.x-page-tour-progress {
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #757575;
+  border-top: 1px solid #eeeeee;
+  margin-top: 8px;
+}
+
+/* Shepherd Progress Bar */
+.shepherd-progress-container {
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+[data-progress-position="top"] .shepherd-progress-container {
+    top: 0;
+    bottom: auto;
+}
+
+.shepherd-progress-bar {
+  height: 100%;
+  background-color: #1e88e5;
+  transition: width 0.3s ease;
+}
+
+/* Element Highlighting */
+.x-page-tour-highlight {
+  position: relative;
+  z-index: 10000;
+  outline: 2px dotted;
+  transition: outline 0.2s ease;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.extras-theme.shepherd-element .shepherd-cancel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+
+/* Remove the text content */
+.extras-theme.shepherd-element .shepherd-cancel-icon span {
+  display: none;
+}
+
+/* Create the X with pseudo-elements */
+.extras-theme.shepherd-element .shepherd-cancel-icon:before,
+.extras-theme.shepherd-element .shepherd-cancel-icon:after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 17px;
+  background-color: currentColor;
+}
+
+.extras-theme.shepherd-element .shepherd-cancel-icon:before {
+  transform: rotate(45deg);
+}
+
+.extras-theme.shepherd-element .shepherd-cancel-icon:after {
+  transform: rotate(-45deg);
+}
+
+
+/* for builder only */
+
+component.brxe-xpagetourstep {
+  position: fixed;
+    inset: 0;
+    height: max-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Progress bar styling using CSS variables and :has() */
+/* Set default progress values */
+:root {
+    --step-count: 1;
+}
+
+/* Use :has() to detect the number of steps and set the variable */
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(1)) {
+    --step-count: 1;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(2)) {
+    --step-count: 2;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(3)) {
+    --step-count: 3;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(4)) {
+    --step-count: 4;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(5)) {
+    --step-count: 5;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(6)) {
+    --step-count: 6;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(7)) {
+    --step-count: 7;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(8)) {
+    --step-count: 8;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(9)) {
+    --step-count: 9;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(10)) {
+    --step-count: 10;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(11)) {
+    --step-count: 11;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(12)) {
+    --step-count: 12;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(13)) {
+    --step-count: 13;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(14)) {
+    --step-count: 14;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(15)) {
+    --step-count: 15;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(16)) {
+    --step-count: 16;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(17)) {
+    --step-count: 17;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(18)) {
+    --step-count: 18;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(19)) {
+    --step-count: 19;
+}
+
+component.brxe-xpagetour:has(.brxe-xpagetourstep:nth-of-type(1):nth-last-of-type(20)) {
+    --step-count: 20;
+}
+
+/* Set the step index for each step */
+component.brxe-xpagetourstep:nth-of-type(1) { --step-index: 1; }
+component.brxe-xpagetourstep:nth-of-type(2) { --step-index: 2; }
+component.brxe-xpagetourstep:nth-of-type(3) { --step-index: 3; }
+component.brxe-xpagetourstep:nth-of-type(4) { --step-index: 4; }
+component.brxe-xpagetourstep:nth-of-type(5) { --step-index: 5; }
+component.brxe-xpagetourstep:nth-of-type(6) { --step-index: 6; }
+component.brxe-xpagetourstep:nth-of-type(7) { --step-index: 7; }
+component.brxe-xpagetourstep:nth-of-type(8) { --step-index: 8; }
+component.brxe-xpagetourstep:nth-of-type(9) { --step-index: 9; }
+component.brxe-xpagetourstep:nth-of-type(10) { --step-index: 10; }
+component.brxe-xpagetourstep:nth-of-type(11) { --step-index: 11; }
+component.brxe-xpagetourstep:nth-of-type(12) { --step-index: 12; }
+component.brxe-xpagetourstep:nth-of-type(13) { --step-index: 13; }
+component.brxe-xpagetourstep:nth-of-type(14) { --step-index: 14; }
+component.brxe-xpagetourstep:nth-of-type(15) { --step-index: 15; }
+component.brxe-xpagetourstep:nth-of-type(16) { --step-index: 16; }
+component.brxe-xpagetourstep:nth-of-type(17) { --step-index: 17; }
+component.brxe-xpagetourstep:nth-of-type(18) { --step-index: 18; }
+component.brxe-xpagetourstep:nth-of-type(19) { --step-index: 19; }
+component.brxe-xpagetourstep:nth-of-type(20) { --step-index: 20; }
+
+/* Calculate the progress width based on the variables */
+.shepherd-progress-bar {
+    width: calc(var(--step-index, 1) / var(--step-count, 1) * 100%);
+}
+
+component.brxe-xpagetour:not( [data-show-progress="true"] ) .shepherd-progress-container {
+    display: none;
+}
+
+component.brxe-xpagetour[data-nav-buttons="false"] .shepherd-footer {
+    display: none;
+}
+
+/* Make all steps visible by default */
+component.brxe-xpagetourstep {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: none;
+  display: block!important;
+}
+
+/* When the page tour is active, make the first step visible */
+component.brxe-xpagetour.is-active-element > component.brxe-xpagetourstep:first-child,
+component.brxe-xpagetour.is-active-element > * > component.brxe-xpagetourstep:first-child,
+component.brxe-xpagetour:not(:has(.is-active-element)):not(:has(.is-active-component)):not(:has(:focus)):not(:has(:focus-within)) > component.brxe-xpagetourstep:first-child,
+component.brxe-xpagetour:not(:has(.is-active-element)):not(:has(.is-active-component)):not(:has(:focus)):not(:has(:focus-within)) > * > component.brxe-xpagetourstep:first-child,
+
+component.brxe-xpagetour.is-active-component > component.brxe-xpagetourstep:first-child,
+component.brxe-xpagetour.is-active-component > * > component.brxe-xpagetourstep:first-child {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transition-delay: 0.3s;
+}
+
+/* Hide steps that don't have the active class */
+component.brxe-xpagetourstep:not(.is-active-element):not(:has(.is-active-element)):not(:hover):not(:focus-within):not(:first-of-type):not(.is-active-component):not(:has(.is-active-component)),
+component.brxe-xpagetourstep:not(.is-active-element):not(:has(.is-active-element)):not(:hover):not(:focus-within):not(:first-of-type):not(.is-active-component):not(:has(.is-active-component)) .shepherd-content * {
+  opacity: 0;
+  visibility: hidden; 
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+} 
+
+component.brxe-xpagetourstep:first-of-type:not(component.brxe-xpagetour.is-active-element .brxe-xpagetourstep):not(.is-active-element):not(component.brxe-xpagetour.is-active-component .brxe-xpagetourstep):not(.is-active-component) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+} 
+
+/* Keep steps visible when they contain active elements */
+component.brxe-xpagetourstep:has(.is-active-element),
+component.brxe-xpagetourstep:has(.is-active-component),
+component.brxe-xpagetourstep:focus-within {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transition-delay: 0s !important;
+}
+
+component.brxe-xpagetourstep:first-of-type:not(:last-of-type):not([data-preview-nav-buttons="true"] .brxe-xpagetourstep) .x-page-tour-button__back,
+component.brxe-xpagetourstep:first-of-type:not(:last-of-type):not([data-preview-nav-buttons="true"] .brxe-xpagetourstep) .x-page-tour-button__complete {
+  display: none;
+}
+
+component.brxe-xpagetourstep:not(:last-of-type):not([data-preview-nav-buttons="true"] .brxe-xpagetourstep) .x-page-tour-button__complete {
+  display: none;
+}
+
+component.brxe-xpagetourstep:last-of-type:not(:first-of-type):not([data-preview-nav-buttons="true"] .brxe-xpagetourstep) .x-page-tour-button__next {
+    display: none;
+}
+
+[data-disable-close-button="true"] .shepherd-cancel-icon {
+  display: none;
+}

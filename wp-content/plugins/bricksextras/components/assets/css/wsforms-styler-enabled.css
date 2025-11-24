@@ -1,0 +1,86 @@
+:root {
+    --xwsf-checkbox-size: 20px;
+    --xwsf-checkbox-spacing: 5px;
+    --xwsf-grid-gutter: 20px;
+    --xwsf-border-width: 2px;
+    --xwsf-focus-shadow: rgb(0 0 0 / 15%);
+    --x-wsf-step-size: 39px;
+}
+
+[data-x-wsf] {
+    width: 100%;
+}
+
+.brxe-xwsforms .wsf-form input[type=radio].wsf-field + label.wsf-label,
+.brxe-xwsforms .wsf-form input[type=checkbox].wsf-field + label.wsf-label {
+    display: flex;
+    align-items: center;
+    -webkit-margin-start: calc(var(--xwsf-checkbox-spacing) + var(--xwsf-checkbox-size) );
+    margin-inline-start: calc(var(--xwsf-checkbox-spacing) + var(--xwsf-checkbox-size) );
+}
+
+.brxe-xwsforms input[type=radio].wsf-field + label.wsf-label:after,
+.brxe-xwsforms input[type=checkbox].wsf-field + label.wsf-label:after {
+    top: unset;
+}
+
+.brxe-xwsforms .wsf-grid {
+    margin-left: calc(0px - (var(--xwsf-grid-gutter)/2));
+    margin-right: calc(0px - (var(--xwsf-grid-gutter)/2));
+}
+
+.brxe-xwsforms .wsf-tile {
+    padding-left: calc( var(--xwsf-grid-gutter)/2 );
+    padding-right: calc( var(--xwsf-grid-gutter)/2 );
+}
+
+.wsf-form [data-row-radio]:not(.wsf-inline),
+.wsf-form [data-row-checkbox]:not(.wsf-inline) {
+    display: flex;
+}
+
+.brxe-xwsforms .wsf-form {
+    --wsf-field-box-shadow-color-focus: var(--xwsf-focus-shadow);
+}
+
+[data-wsf-style-id] {
+    --wsf-field-color-background: #fff;
+}
+
+.brxe-xwsforms .wsf-form input[type=radio].wsf-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brxe-xwsforms select.wsf-field:not([multiple]):not([size])  {
+    height: auto;
+}
+
+.brxe-xwsforms .wsf-form ul.wsf-group-tabs.wsf-steps > li > a:before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--x-wsf-step-size);
+    width: var(--x-wsf-step-size);
+}
+
+.brxe-xwsforms .wsf-form ul.wsf-group-tabs.wsf-steps > li > a:after {
+    top: calc(var(--x-wsf-step-size) / 2);
+}
+
+.brxe-xwsforms .wsf-form {
+    --wsf-field-radio-checked-size: calc(var(--wsf-field-radio-size)* 0.5);
+    --wsf-field-checkbox-check-height: calc(var(--wsf-field-checkbox-size) / 2);
+    --wsf-field-checkbox-check-size: calc(var(--wsf-field-checkbox-size) / 8);
+    --wsf-field-checkbox-check-width: calc(var(--wsf-field-checkbox-size) / 4);
+}
+
+[data-x-wsf] .iti__arrow:not(.iti__arrow--up) {
+    color: #555;
+    border-top: 4px solid currentColor;
+}
+
+[data-x-wsf] .iti__arrow--up {
+    border-bottom: 4px solid currentColor;
+}

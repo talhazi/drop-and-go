@@ -1,0 +1,11 @@
+[data-x-dynamic-chart] {
+    width: 800px;
+}
+
+[data-x-dynamic-chart][data-x-chart] {
+    aspect-ratio: 2/1;
+}
+
+[data-x-dynamic-chart="doughnut"][data-x-chart] {
+    aspect-ratio: 1/1;
+} 
