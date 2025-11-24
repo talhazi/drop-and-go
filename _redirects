@@ -1,0 +1,13 @@
+# Netlify redirects file
+
+# Redirect old WordPress URLs to clean URLs
+/?p=492 /שרותי-שמירת-חפצים-ומלתחה/ 301
+/?p=109 /תקנון-האתר/ 301
+/?p=503 /services/שירותי-שמירת-חפצים/ 301
+/?p=505 /services/שירותי-מלתחה/ 301
+/?p=509 /services/שירותי-שמירת-חפצים-ומלתחה/ 301
+/?p=691 /מדיניות-הפרטיות/ 301
+
+# Handle 404 errors
+/*  /index.html  200
+
