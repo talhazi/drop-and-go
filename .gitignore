@@ -1,62 +1,45 @@
-# WordPress Core Files
+# WordPress core files
 /wp-admin/
 /wp-includes/
-wp-*.php
-xmlrpc.php
-license.txt
-readme.html
 
-# WordPress Configuration
+# Configuration files
 wp-config.php
 
-# Database Backups
+# Database files
 *.sql
 *.sql.gz
 
-# WordPress Cache
-**/cache/*
-**/Cache/*
-wp-content/cache/
+# Uploads (too large for git)
+/wp-content/uploads/
 
-# WordPress Uploads (too large, exclude from git)
-wp-content/uploads/
+# Plugins (exclude from git, too large)
+/wp-content/plugins/
 
-# WordPress Backups
-wp-content/wpvividbackups/
-wp-content/wpvivid_uploads/
-wp-content/wpvivid_staging/
-wp-content/upgrade/
-wp-content/upgrade-temp-backup/
+# Themes (exclude parent theme, keep child theme)
+/wp-content/themes/bricks/
 
-# Cache Plugins
-wp-content/object-cache.php
-wp-content/litespeed/
+# Cache and temporary files
+/wp-content/cache/
+/wp-content/litespeed/
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/
+/wp-content/wpvivid_staging/
+/wp-content/wpvivid_uploads/
+/wp-content/wpvividbackups/
+/wp-content/compressx/
+/wp-content/compressx-nextgen/
 
-# Compression Cache
-wp-content/compressx/
-wp-content/compressx-nextgen/
+# Temporary PHP scripts
+activate-plugin.php
+generate-static.php
+run-static-export.php
 
-# Log Files
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS Files
+# OS files
 .DS_Store
 Thumbs.db
-.AppleDouble
-.LSOverride
 
-# Editor Files
-*.swp
-*.swo
-*~
-.idea/
+# IDE files
 .vscode/
+.idea/
 *.sublime-project
 *.sublime-workspace
-
-# Node modules (if any)
-node_modules/
-
